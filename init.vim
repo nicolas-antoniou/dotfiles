@@ -31,6 +31,9 @@ set statusline+=\ %c:%l/%l
 set statusline+=\ %p%%
 set statusline+=\ [%n]
 
+xnoremap J :move '<-2<CR>gv-gv
+xnoremap K :move '>+1<CR>gv-gv
+
 call plug#begin('~/local/share/nvim/plugged')
 Plug 'gruvbox-community/gruvbox'
 call plug#end()
