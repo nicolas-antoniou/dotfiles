@@ -21,6 +21,16 @@ set undofile
 set incsearch
 set shiftwidth=4
 
+set statusline=
+set statusline+=\ %m
+set statusline+=\ %y
+set statusline+=\ %r
+set statusline+=\ %f
+set statusline+=%= "right side settings
+set statusline+=\ %c:%l/%l
+set statusline+=\ %p%%
+set statusline+=\ [%n]
+
 call plug#begin('~/local/share/nvim/plugged')
 Plug 'gruvbox-community/gruvbox'
 call plug#end()
