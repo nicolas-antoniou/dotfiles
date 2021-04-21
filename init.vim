@@ -23,12 +23,17 @@ set undofile
 set incsearch
 set shiftwidth=4
 
+set noshowmode
+let g:currentmode={'n':'NORMAL','v':'VISUAL','V':'V·LINE','':'V·BLOCK',
+      \ 'i':'INSERT','R':'R','Rv':'V·REPLACE','c':'COMMAND'}
+
 set statusline=
 set statusline+=%#IncSearch#
-set statusline+=\ %y
+set statusline+=\ %{g:currentmode[mode()]}
 set statusline+=\ %r
 set statusline+=%#CursorLineNr#
 set statusline+=\ %F
+set statusline+=\ %y
 set statusline+=%= "Right side settings
 set statusline+=%#Search#
 set statusline+=\ %l/%L
