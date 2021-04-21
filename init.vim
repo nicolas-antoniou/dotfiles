@@ -22,14 +22,15 @@ set incsearch
 set shiftwidth=4
 
 set statusline=
-set statusline+=\ %m
+set statusline+=%#IncSearch#
 set statusline+=\ %y
 set statusline+=\ %r
-set statusline+=\ %f
-set statusline+=%= "right side settings
-set statusline+=\ %c:%l/%L
-set statusline+=\ %p%%
-set statusline+=\ [%n]
+set statusline+=%#CursorLineNr#
+set statusline+=\ %F
+set statusline+=%= "Right side settings
+set statusline+=%#Search#
+set statusline+=\ %l/%L
+set statusline+=\ [%c]
 
 xnoremap J :move '<-2<CR>gv-gv
 xnoremap K :move '>+1<CR>gv-gv
@@ -43,3 +44,4 @@ let mapleader = " "
 
 nnoremap <silent> <leader>o :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
 nnoremap <silent> <leader>O :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
+nnoremap <leader>ps :Lexplore<CR>
