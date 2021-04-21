@@ -100,6 +100,8 @@ alias more=less
 alias vim='nvim'
 alias z="zathura"
 alias p="sudo pacman"
+alias la="ls -A"
+alias v="nvim"
 
 xhost +local:root > /dev/null 2>&1
 
