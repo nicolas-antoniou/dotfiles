@@ -102,6 +102,7 @@ alias z="zathura"
 alias p="sudo pacman"
 alias la="ls -A"
 alias v="nvim"
+alias s="sxiv"
 
 xhost +local:root > /dev/null 2>&1
 
