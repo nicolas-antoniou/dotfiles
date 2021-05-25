@@ -42,6 +42,9 @@ alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
 
+alias mpv='devour mpv'
+alias sxiv='devour sxiv'
+alias zathura='devour zathura'
 alias s='sxiv'
 alias cp="cp -iv"                          # confirm before overwriting something
 alias mv="mv -iv"
