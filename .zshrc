@@ -12,8 +12,16 @@ plugins=(git archlinux zsh-syntax-highlighting zsh-autosuggestions)
 autoload -U colors && colors	# Load colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
+# Basic auto/tab complete:
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)	
+
 #some useful options (man zshoptions)
 setopt autocd extendedglob nomatch menucomplete 
+stty stop undef
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
