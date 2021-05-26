@@ -50,6 +50,7 @@ alias v="nvim"
 alias p="sudo pacman"
 alias la="ls -A"
 
+#user defined functions
 ex ()
 {
   if [ -f $1 ] ; then
@@ -121,6 +122,7 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
+#user defined keybinds
 bindkey -s '^o' 'rcd\n'
 bindkey '^ ' autosuggest-accept
 bindkey -s '^f' 'cdf^M'
@@ -130,7 +132,7 @@ bindkey '^[[P' delete-char
 export FZF_DEFAULT_OPTS="
 --layout=reverse
 --info=inline
---height=40%
+--height=80%
 --multi
 --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
 --color='hl:148,hl+:154,pointer:032,marker:010,bg+:237,gutter:008'
