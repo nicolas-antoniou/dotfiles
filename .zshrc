@@ -113,12 +113,14 @@ zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
+# Edit line in vim with ctrl-e:
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^e' edit-command-line
 
 bindkey -s '^o' 'rcd\n'
-
+bindkey '^ ' autosuggest-accept
 bindkey -s '^f' 'cd "$(dirname "$(fzf)")"\n'
 bindkey -s '^n' 'vif^M'
-
 bindkey '^[[P' delete-char
 
 export FZF_DEFAULT_OPTS="
@@ -132,8 +134,4 @@ export FZF_DEFAULT_OPTS="
 "
 export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude '.git' --exclude 'node_modules'"
 
-# Edit line in vim with ctrl-e:
-autoload edit-command-line; zle -N edit-command-line
-bindkey '^e' edit-command-line
 
-bindkey '^ ' autosuggest-accept
