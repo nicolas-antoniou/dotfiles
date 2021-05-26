@@ -86,7 +86,7 @@ rcd () {
     ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"
 }
 
-function cdf() {
+cdf() {
     cd $(fzf)  
 }
 
