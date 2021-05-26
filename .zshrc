@@ -72,6 +72,20 @@ ex ()
   fi
 }
 
+pacin () {
+    pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S
+}
+
+pacre () {
+    pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns
+}
+
+mcd () { mkdir -p "$1" && cd "$1"; }
+
+rcd () {
+    ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"
+}
+
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
@@ -99,15 +113,11 @@ zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
-mcd () { mkdir -p "$1" && cd "$1"; }
 
-rcd () {
-    ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"
-}
 bindkey -s '^o' 'rcd\n'
 
 bindkey -s '^f' 'cd "$(dirname "$(fzf)")"\n'
-bindkey -s '^n' 'nvim $(fzf)^M'
+bindkey -s '^n' 'vif^M'
 
 bindkey '^[[P' delete-char
 
@@ -121,14 +131,6 @@ export FZF_DEFAULT_OPTS="
 --prompt='∼ ' --pointer='▶' --marker='✓'
 "
 export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude '.git' --exclude 'node_modules'"
-
-pacin () {
-    pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S
-}
-
-pacre () {
-    pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns
-}
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
