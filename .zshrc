@@ -106,8 +106,6 @@ rcd () {
 }
 bindkey -s '^o' 'rcd\n'
 
-bindkey -s '^a' 'bc -lq\n'
-
 bindkey -s '^f' 'cd "$(dirname "$(fzf)")"\n'
 bindkey -s '^n' 'nvim $(fzf)^M'
 
