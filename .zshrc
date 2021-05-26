@@ -86,6 +86,10 @@ rcd () {
     ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"
 }
 
+function cdf() {
+    cd $(fzf)  
+}
+
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
@@ -119,7 +123,7 @@ bindkey '^e' edit-command-line
 
 bindkey -s '^o' 'rcd\n'
 bindkey '^ ' autosuggest-accept
-bindkey -s '^f' 'cd "$(dirname "$(fzf)")"\n'
+bindkey -s '^f' 'cdf^M'
 bindkey -s '^n' 'vif^M'
 bindkey '^[[P' delete-char
 
@@ -133,5 +137,3 @@ export FZF_DEFAULT_OPTS="
 --prompt='∼ ' --pointer='▶' --marker='✓'
 "
 export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude '.git' --exclude 'node_modules'"
-
-
