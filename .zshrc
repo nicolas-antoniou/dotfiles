@@ -88,7 +88,13 @@ rcd () {
 }
 
 cdf() {
-    cd $(fzf)  
+    cd $HOME/$(fd --base-directory $HOME --type d --hidden --exclude '.git' --exclude 'node_modules' --max-depth=4 | fzf)  
+}
+
+vif() {
+    local fname
+    fname=$HOME/$(fd --base-directory $HOME --type f --hidden -E '*.jpg' -E '*.jpeg' -E '.git' -E 'node_modules' -E '.nvim' -E '*.mp4' -E '*.png' --max-depth=4 | fzf) || return
+    nvim "$fname"
 }
 
 # vi mode
