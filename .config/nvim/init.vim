@@ -46,6 +46,8 @@ xnoremap J :move '>+1<CR>gv-gv
 
 call plug#begin('~/local/share/nvim/plugged')
 Plug 'sainnhe/gruvbox-material'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 colorscheme gruvbox-material
@@ -55,4 +57,6 @@ let mapleader = " "
 
 nnoremap <silent> <leader>o :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
 nnoremap <silent> <leader>O :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
-nnoremap <leader>ps :Lexplore<CR>
+"nnoremap <leader>ps :Lexplore<CR>
+nnoremap <leader>ps :Files<CR>
+nnoremap <leader>pg :Rg<CR>
