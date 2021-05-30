@@ -60,3 +60,4 @@ nnoremap <silent> <leader>O :<C-u>call append(line(".")-1, repeat([""], v:count1
 "nnoremap <leader>ps :Lexplore<CR>
 nnoremap <leader>ps :Files<CR>
 nnoremap <leader>pg :Rg<CR>
+let $FZF_DEFAULT_COMMAND="fd --base-directory $HOME --type f --hidden -E '*.jpg' -E '*.jpeg' -E '.git' -E 'node_modules' -E '.nvim' -E '*.mp4' -E '*.png' --max-depth=4"
