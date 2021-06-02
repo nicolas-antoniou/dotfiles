@@ -24,6 +24,9 @@ set undofile
 set incsearch
 set shiftwidth=4
 set termguicolors
+set smartcase
+set ignorecase
+set mouse=a
 
 set noshowmode
 let g:currentmode={'n':'NORMAL','v':'VISUAL','V':'V·LINE','':'V·BLOCK',
