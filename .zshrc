@@ -128,6 +128,7 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
+zle -N autosuggest-accept
 #user defined keybinds
 bindkey -s '^o' 'rcd\n'
 bindkey '^ ' autosuggest-accept
