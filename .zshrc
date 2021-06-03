@@ -151,3 +151,5 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
+source ~/scripts/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/scripts/zsh-autosuggestions/zsh-autosuggestions.zsh
