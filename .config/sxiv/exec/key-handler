@@ -20,7 +20,6 @@ do
         "C-w")
                 xwallpaper --stretch "$file" ;;
 			        notify-send -i "$(readlink -f "$file")" "$file has been set as wallpaper" & ;;
-
         "C-y")
 		        readlink -f "$file" | tr -d '\n' | xclip -selection clipboard &&
 			        notify-send "$(readlink -f "$file") copied to clipboard" & ;;
