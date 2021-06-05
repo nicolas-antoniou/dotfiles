@@ -27,22 +27,7 @@ set termguicolors
 set smartcase
 set ignorecase
 set mouse=a
-
 set noshowmode
-let g:currentmode={'n':'NORMAL','v':'VISUAL','V':'V·LINE','':'V·BLOCK',
-      \ 'i':'INSERT','R':'R','Rv':'V·REPLACE','c':'COMMAND'}
-
-set statusline=
-set statusline+=%#IncSearch#
-set statusline+=\ %{g:currentmode[mode()]}
-set statusline+=\ %r
-set statusline+=%#CursorLineNr#
-set statusline+=\ %F
-set statusline+=\ %y
-set statusline+=%= "Right side settings
-set statusline+=%#Search#
-set statusline+=\ %l/%L
-set statusline+=\ [%c]
 
 xnoremap K :move '<-2<CR>gv-gv
 xnoremap J :move '>+1<CR>gv-gv
@@ -51,8 +36,12 @@ call plug#begin('~/local/share/nvim/plugged')
 Plug 'sainnhe/gruvbox-material'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
+let g:lightline = {
+      \ 'colorscheme': 'Tomorrow_Night',
+      \ }
 colorscheme gruvbox-material
 let g:gruvbox_material_palette = 'material'
 
