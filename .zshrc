@@ -1,8 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# plugins=(archlinux zsh-syntax-highlighting zsh-autosuggestions)
-
 autoload -U colors && colors	# Load colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
@@ -95,6 +93,10 @@ vif() {
     local fname
     fname=$HOME/$(fd --base-directory $HOME --type f --hidden -E '*.jpg' -E '*.jpeg' -E '.git' -E 'node_modules' -E '.nvim' -E '*.mp4' -E '*.png' --max-depth=4 | fzf) || return
     nvim "$fname"
+}
+
+volume () {
+    pactl set-sink-volume 0 $1%
 }
 
 # vi mode
