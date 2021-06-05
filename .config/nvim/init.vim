@@ -37,6 +37,7 @@ Plug 'sainnhe/gruvbox-material'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'kevinhwang91/rnvimr'
 call plug#end()
 
 let g:lightline = {
@@ -52,4 +53,6 @@ nnoremap <silent> <leader>O :<C-u>call append(line(".")-1, repeat([""], v:count1
 "nnoremap <leader>ps :Lexplore<CR>
 nnoremap <leader>ps :Files<CR>
 nnoremap <leader>pg :Rg<CR>
+nnoremap <leader>pr :RnvimrToggle<CR>
 let $FZF_DEFAULT_COMMAND="fd --base-directory $HOME --type f --hidden -E '*.jpg' -E '*.jpeg' -E '.git' -E 'node_modules' -E '.nvim' -E '*.mp4' -E '*.png' --max-depth=4"
+source $HOME/.config/nvim/plug-config/rnvimr.vim
