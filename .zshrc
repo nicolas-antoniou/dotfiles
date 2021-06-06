@@ -95,7 +95,7 @@ vif() {
     nvim "$fname"
 }
 
-volume () {
+vol () {
     pactl set-sink-volume 0 $1%
 }
 
