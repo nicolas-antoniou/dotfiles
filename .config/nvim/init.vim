@@ -28,6 +28,13 @@ set smartcase
 set ignorecase
 set mouse=a
 set noshowmode
+set title
+
+"Save file as sudo on files that require root permission
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+
+"Replace all is aliased to S.
+nnoremap S :%s//g<Left><Left>
 
 xnoremap K :move '<-2<CR>gv-gv
 xnoremap J :move '>+1<CR>gv-gv
