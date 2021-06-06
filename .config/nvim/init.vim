@@ -36,6 +36,17 @@ cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 "Replace all is aliased to S.
 nnoremap S :%s//g<Left><Left>
 
+augroup ReduceNoise
+    autocmd!
+    " Automatically resize active split to 85 width
+    autocmd WinEnter * :call ResizeSplits()
+augroup END
+
+function! ResizeSplits()
+    set winwidth=85
+    wincmd =
+endfunction
+
 xnoremap K :move '<-2<CR>gv-gv
 xnoremap J :move '>+1<CR>gv-gv
 
