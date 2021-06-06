@@ -38,6 +38,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'kevinhwang91/rnvimr'
+Plug 'tpope/vim-surround'
+Plug 'ap/vim-css-color'
 call plug#end()
 
 let g:lightline = {
