@@ -99,6 +99,10 @@ vol () {
     pactl set-sink-volume 0 $1%
 }
 
+yt () {
+    youtube-dl -o ~/Videos/%(title)s.%(ext)s $1
+}
+
 DISABLE_AUTO_TITLE="true"
 
 function set_terminal_title() {
