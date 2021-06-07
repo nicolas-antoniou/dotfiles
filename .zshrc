@@ -99,6 +99,14 @@ vol () {
     pactl set-sink-volume 0 $1%
 }
 
+DISABLE_AUTO_TITLE="true"
+
+function set_terminal_title() {
+  echo -en "\e]2;$@\a"
+}
+
+set_terminal_title Terminal
+
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
