@@ -12,7 +12,8 @@ compinit
 _comp_options+=(globdots)	
 
 #some useful options (man zshoptions)
-setopt autocd extendedglob nomatch menucomplete 
+setopt autocd extendedglob menucomplete
+unsetopt nomatch
 stty stop undef
 
 # You may need to manually set your language environment
