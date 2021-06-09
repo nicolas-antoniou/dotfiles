@@ -4,8 +4,8 @@ dunst &
 
 # Environment variables set everywhere
 export EDITOR="nvim"
-export TERMINAL="st"
-export BROWSER="brave"
+export TERMINAL="kitty"
+export BROWSER="firefox"
 
 # XDG Paths
 export XDG_CONFIG_HOME=$HOME/.config
