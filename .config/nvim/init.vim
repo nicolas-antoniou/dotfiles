@@ -19,8 +19,8 @@ set expandtab
 set smartindent
 set nu
 set nowrap
-set undodir=~/.nvim/undodir
-set undofile
+"set undodir=~/.nvim/undodir
+"set undofile
 set incsearch
 set shiftwidth=4
 set termguicolors
@@ -51,7 +51,7 @@ endfunction
 xnoremap K :move '<-2<CR>gv-gv
 xnoremap J :move '>+1<CR>gv-gv
 
-call plug#begin('~/local/share/nvim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 Plug 'sainnhe/gruvbox-material'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
