@@ -16,4 +16,4 @@ export XDG_DATA_HOME=$HOME/.local/share
 export ZDOTDIR=$HOME/.config/zsh
 
 xwallpaper --stretch ~/Pictures/Wallpapers/wallpaper1.jpeg
-exec dwm 2> ~/.dwm.log
+exec dwm 2> ~/.cache/dwm.log
