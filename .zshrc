@@ -164,6 +164,9 @@ export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude '.git' --exclude 'nod
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 #export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
 
+# Adds `~/.local/bin` to $PATH
+export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
+
 # Environment variables set everywhere
 export TERMINAL="kitty"
 export BROWSER="firefox"
