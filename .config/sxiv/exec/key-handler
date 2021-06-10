@@ -23,5 +23,7 @@ do
         "C-y")
 		        readlink -f "$file" | tr -d '\n' | xclip -selection clipboard &&
 			        notify-send "$(readlink -f "$file") copied to clipboard" & ;;
+	"C-i")	
+		notify-send "File information" "$(mediainfo "$file")" ;;
         esac
 done
