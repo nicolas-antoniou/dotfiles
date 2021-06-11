@@ -171,6 +171,9 @@ export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
 export TERMINAL="kitty"
 export BROWSER="firefox"
 
+export LESSHISTFILE="-"
+export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
+
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 source ~/.local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
