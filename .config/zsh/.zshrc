@@ -34,6 +34,7 @@ alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
 
+alias upgrade='sudo pacman -Syu'
 alias mpv='devour mpv'
 alias sxiv='devour sxiv'
 alias zathura='devour zathura'
@@ -87,12 +88,12 @@ rcd () {
 }
 
 cdf() {
-    cd $HOME/$(fd --base-directory $HOME --type d --hidden --exclude '.git' --exclude 'node_modules' --max-depth=4 | fzf)  
+    cd $HOME/$(fd --base-directory $HOME --type d --hidden --exclude '.git' --exclude 'node_modules' | fzf)  
 }
 
 vif() {
     local fname
-    fname=$HOME/$(fd --base-directory $HOME --type f --hidden -E '*.jpg' -E '*.jpeg' -E '.git' -E 'node_modules' -E '.nvim' -E '*.mp4' -E '*.png' --max-depth=4 | fzf) || return
+    fname=$HOME/$(fd --base-directory $HOME --type f --hidden -E '*.jpg' -E '*.jpeg' -E '.git' -E 'node_modules' -E '.nvim' -E '*.mp4' -E '*.png' | fzf) || return
     nvim "$fname"
 }
 
@@ -154,9 +155,8 @@ bindkey '^[[P' delete-char
 export FZF_DEFAULT_OPTS="
 --layout=reverse
 --info=inline
---height=80%
+--height=20%
 --multi
---preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
 --color='hl:148,hl+:154,pointer:032,marker:010,bg+:237,gutter:008'
 --prompt='∼ ' --pointer='▶' --marker='✓'
 "
