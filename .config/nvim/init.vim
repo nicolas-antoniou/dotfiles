@@ -32,7 +32,7 @@ set title
 let &titleold="Terminal"
 
 "Save file as sudo on files that require root permission
-cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+cnoremap w!! execute 'silent! write !SUDO_ASKPASS=`which ssh-askpass` sudo tee % >/dev/null' <bar> edit!
 
 "Replace all is aliased to S.
 nnoremap S :%s//g<Left><Left>
@@ -42,8 +42,10 @@ xnoremap <silent>J :move '>+1<CR>gv-gv
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'sainnhe/gruvbox-material'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'itchyny/lightline.vim'
 Plug 'kevinhwang91/rnvimr'
 Plug 'tpope/vim-surround'
@@ -60,8 +62,8 @@ let mapleader = " "
 
 nnoremap <silent> <leader>o :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
 nnoremap <silent> <leader>O :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
-nnoremap <leader>ps :Files<CR>
-nnoremap <leader>pg :Rg<CR>
+nnoremap <silent> <leader>ps :Files<CR>
+nnoremap <silent> <leader>pg :Rg<CR>
 nnoremap <silent> <leader>pr :RnvimrToggle<CR>
 let $FZF_DEFAULT_COMMAND="fd --base-directory $HOME --type f --hidden -E '*.jpg' -E '*.jpeg' -E '.git' -E 'node_modules' -E '.nvim' -E '*.mp4' -E '*.png' --max-depth=4"
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
