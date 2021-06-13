@@ -19,8 +19,6 @@ set expandtab
 set smartindent
 set nu
 set nowrap
-"set undodir=~/.nvim/undodir
-"set undofile
 set incsearch
 set shiftwidth=4
 set termguicolors
@@ -31,9 +29,6 @@ set noshowmode
 set title
 let &titleold="Terminal"
 set noswapfile
-
-"Save file as sudo on files that require root permission
-cnoremap w!! execute 'silent! write !SUDO_ASKPASS=`which ssh-askpass` sudo tee % >/dev/null' <bar> edit!
 
 "Replace all is aliased to S.
 nnoremap S :%s//g<Left><Left>
@@ -80,7 +75,6 @@ EOF
 
 nnoremap <silent> <leader>o :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
 nnoremap <silent> <leader>O :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
-"nnoremap <silent> <leader>ps :Telescope find_files find_command=fd,--hidden,--follow,--exclude,'.git',--exclude,'node_modules'<CR>
 nnoremap <silent> <leader>ps :Telescope find_files find_command=fd,-E,Pictures,-E,Videos,--type,f,-H<CR>
 nnoremap <silent> <leader>pg :Telescope live_grep<CR>
 nnoremap <silent> <leader>pr :RnvimrToggle<CR>
