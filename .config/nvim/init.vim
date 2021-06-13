@@ -80,6 +80,4 @@ nnoremap <silent> <leader>O :<C-u>call append(line(".")-1, repeat([""], v:count1
 nnoremap <silent> <leader>ps :Telescope find_files find_command=fd,--hidden,--follow,--exclude,'.git',--exclude,'node_modules'<CR>
 nnoremap <silent> <leader>pg :Telescope live_grep<CR>
 nnoremap <silent> <leader>pr :RnvimrToggle<CR>
-let $FZF_DEFAULT_COMMAND="fd --base-directory $HOME --type f --hidden -E '*.jpg' -E '*.jpeg' -E '.git' -E 'node_modules' -E '.nvim' -E '*.mp4' -E '*.png' --max-depth=4"
-let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
 source $HOME/.config/nvim/plug-config/rnvimr.vim
