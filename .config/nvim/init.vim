@@ -60,10 +60,23 @@ let g:gruvbox_material_palette = 'material'
 
 let mapleader = " "
 
+local actions = require('telescope.actions')
+require('telescope').setup{
+  defaults = {
+    mappings = {
+      i = {
+        ["<esc>"] = actions.close,
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous
+      },
+    },
+  }
+}
+
 nnoremap <silent> <leader>o :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
 nnoremap <silent> <leader>O :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
-nnoremap <silent> <leader>ps :Files<CR>
-nnoremap <silent> <leader>pg :Rg<CR>
+nnoremap <silent> <leader>ps :Telescope find_files find_command=fd,--hidden,--follow,--exclude,'.git',--exclude,'node_modules'<CR>
+nnoremap <silent> <leader>pg :Telescope live_grep<CR>
 nnoremap <silent> <leader>pr :RnvimrToggle<CR>
 let $FZF_DEFAULT_COMMAND="fd --base-directory $HOME --type f --hidden -E '*.jpg' -E '*.jpeg' -E '.git' -E 'node_modules' -E '.nvim' -E '*.mp4' -E '*.png' --max-depth=4"
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
