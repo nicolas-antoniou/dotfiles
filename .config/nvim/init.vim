@@ -30,6 +30,7 @@ set mouse=a
 set noshowmode
 set title
 let &titleold="Terminal"
+set noswapfile
 
 "Save file as sudo on files that require root permission
 cnoremap w!! execute 'silent! write !SUDO_ASKPASS=`which ssh-askpass` sudo tee % >/dev/null' <bar> edit!
@@ -49,7 +50,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'itchyny/lightline.vim'
 Plug 'kevinhwang91/rnvimr'
 Plug 'tpope/vim-surround'
-Plug 'ap/vim-css-color'
+Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
 
 let g:lightline = {
@@ -57,6 +58,8 @@ let g:lightline = {
       \ }
 colorscheme gruvbox-material
 let g:gruvbox_material_palette = 'material'
+
+lua require'colorizer'.setup()
 
 let mapleader = " "
 
