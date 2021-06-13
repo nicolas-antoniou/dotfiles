@@ -9,8 +9,8 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
-map zz :q!<CR>
-map zs :wq!<CR>
+map <silent>zz :q!<CR>
+map <silent>zs :wq!<CR>
 set clipboard+=unnamedplus
 set tabstop=4 
 set softtabstop=4
@@ -37,8 +37,8 @@ cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 "Replace all is aliased to S.
 nnoremap S :%s//g<Left><Left>
 
-xnoremap K :move '<-2<CR>gv-gv
-xnoremap J :move '>+1<CR>gv-gv
+xnoremap <silent>K :move '<-2<CR>gv-gv
+xnoremap <silent>J :move '>+1<CR>gv-gv
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'sainnhe/gruvbox-material'
@@ -62,7 +62,7 @@ nnoremap <silent> <leader>o :<C-u>call append(line("."),   repeat([""], v:count1
 nnoremap <silent> <leader>O :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
 nnoremap <leader>ps :Files<CR>
 nnoremap <leader>pg :Rg<CR>
-nnoremap <leader>pr :RnvimrToggle<CR>
+nnoremap <silent> <leader>pr :RnvimrToggle<CR>
 let $FZF_DEFAULT_COMMAND="fd --base-directory $HOME --type f --hidden -E '*.jpg' -E '*.jpeg' -E '.git' -E 'node_modules' -E '.nvim' -E '*.mp4' -E '*.png' --max-depth=4"
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
 source $HOME/.config/nvim/plug-config/rnvimr.vim
