@@ -77,7 +77,8 @@ EOF
 
 nnoremap <silent> <leader>o :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
 nnoremap <silent> <leader>O :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
-nnoremap <silent> <leader>ps :Telescope find_files find_command=fd,--hidden,--follow,--exclude,'.git',--exclude,'node_modules'<CR>
+"nnoremap <silent> <leader>ps :Telescope find_files find_command=fd,--hidden,--follow,--exclude,'.git',--exclude,'node_modules'<CR>
+nnoremap <silent> <leader>ps :Telescope find_files find_command=fd,-E,Pictures,-E,Videos,--type,f,-H<CR>
 nnoremap <silent> <leader>pg :Telescope live_grep<CR>
 nnoremap <silent> <leader>pr :RnvimrToggle<CR>
 source $HOME/.config/nvim/plug-config/rnvimr.vim
