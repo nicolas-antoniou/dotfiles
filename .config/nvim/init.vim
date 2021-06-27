@@ -46,6 +46,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'kevinhwang91/rnvimr'
 Plug 'tpope/vim-surround'
 Plug 'norcalli/nvim-colorizer.lua'
+Plug 'lervag/vimtex'
 call plug#end()
 
 let g:lightline = {
@@ -73,6 +74,7 @@ require('telescope').setup{
 }
 EOF
 
+nnoremap <F9> :echo system('python3 "' . expand('%') . '"')<cr>
 nnoremap <silent> <leader>o :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
 nnoremap <silent> <leader>O :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
 nnoremap <silent> <leader>ps :Telescope find_files find_command=fd,-E,Pictures,-E,Videos,--type,f,-H<CR>
