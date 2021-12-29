@@ -102,7 +102,7 @@ vol () {
 }
 
 yt () {
-    youtube-dl -o ~/Videos/%(title)s.%(ext)s $1
+    yt-dlp -o ~/Videos/%(title)s.%(ext)s -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" $1
 }
 
 DISABLE_AUTO_TITLE="true"
