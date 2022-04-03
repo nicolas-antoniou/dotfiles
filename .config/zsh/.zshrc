@@ -33,7 +33,7 @@ alias ls='ls -hN --color=auto --group-directories-first'
 alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
-
+alias ssh="kitty +kitten ssh"
 alias upgrade='sudo pacman -Syu'
 alias mpv='devour mpv'
 alias sxiv='devour sxiv'
